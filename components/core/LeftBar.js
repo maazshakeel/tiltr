@@ -1,7 +1,14 @@
 import React, { useState } from "react";
-import { BackgroundTab, Button, ThreeD } from "..";
+import { BackgroundTab, Button, Position, ThreeD } from "..";
 import { motion } from "framer-motion";
-import { FiBox, FiMapPin, FiPenTool, FiSun, FiType } from "react-icons/fi";
+import {
+  FiBox,
+  FiLayers,
+  FiMapPin,
+  FiPenTool,
+  FiSun,
+  FiType,
+} from "react-icons/fi";
 import { GoBrowser } from "react-icons/go";
 import { BiPalette } from "react-icons/bi";
 import Tooltip from "@mui/material/Tooltip";
@@ -34,8 +41,8 @@ const LeftBar = (props) => {
       icon: <GoBrowser className="text-2xl text-gray-700" />,
     },
     {
-      name: "Shadow",
-      icon: <FiSun className="text-2xl text-gray-700" />,
+      name: "Other Properties",
+      icon: <FiLayers className="text-2xl text-gray-700" />,
     },
     {
       name: "Annotation",
@@ -86,6 +93,7 @@ const LeftBar = (props) => {
       >
         {sidebarProperty === "Background" && <BackgroundTab {...props} />}
         {sidebarProperty === "3d" && <ThreeD {...props} />}
+        {sidebarProperty === "Position" && <Position {...props} />}
       </motion.div>
     </>
   );

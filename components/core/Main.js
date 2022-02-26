@@ -49,7 +49,7 @@ const Main = ({ data, setData }) => {
               src="/sleepiest-screenshot.png"
               alt=""
               style={{
-                transform: `rotateX(${data.threeD.x}deg) rotateY(${data.threeD.y}deg) rotateZ(${data.threeD.z}deg)`,
+                transform: `translateX(${data.position.x}%) translateY(${data.position.y}%) rotateX(${data.threeD.x}deg) rotateY(${data.threeD.y}deg) rotateZ(${data.threeD.z}deg)`,
               }}
             />
           </div>

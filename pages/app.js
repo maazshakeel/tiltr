@@ -13,6 +13,10 @@ const App = () => {
       y: 0,
       z: 0,
     },
+    position: {
+      x: 0,
+      y: 0,
+    },
   });
 
   const props = { data, setData };
