@@ -8,6 +8,11 @@ const App = () => {
       color2: "#3524FF",
       direction: 45,
     },
+    threeD: {
+      x: 0,
+      y: 0,
+      z: 0,
+    },
   });
 
   const props = { data, setData };

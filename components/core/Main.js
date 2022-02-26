@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-const Main = () => {
+const Main = ({ data, setData }) => {
   // resize cover image to fit the view
   const resizeCoverImage = () => {
     const cover_image = document.querySelector("#cover_image_preview");
@@ -40,8 +40,19 @@ const Main = () => {
         <div className="scale-[.85] z-[0]">
           <div
             id="cover_image_preview"
-            className="relative cover_image bg-blue-700 overflow-hidden select-none rounded-[2em] z-[0]"
-          ></div>
+            className="relative cover_image overflow-hidden select-none rounded-[2em] z-[0]"
+            style={{
+              background: `linear-gradient(${data.background.direction}deg, ${data.background.color1}, ${data.background.color2})`,
+            }}
+          >
+            <img
+              src="/sleepiest-screenshot.png"
+              alt=""
+              style={{
+                transform: `rotateX(${data.threeD.x}deg) rotateY(${data.threeD.y}deg) rotateZ(${data.threeD.z}deg)`,
+              }}
+            />
+          </div>
         </div>
       </div>
     </div>

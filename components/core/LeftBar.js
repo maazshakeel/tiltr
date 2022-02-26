@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BackgroundTab, Button } from "..";
+import { BackgroundTab, Button, ThreeD } from "..";
 import { motion } from "framer-motion";
 import { FiBox, FiMapPin, FiPenTool, FiSun, FiType } from "react-icons/fi";
 import { GoBrowser } from "react-icons/go";
@@ -85,6 +85,7 @@ const LeftBar = (props) => {
         className="bg-white text-34xl h-[95vh] shadow-lg my-6 w-[35vh] absolute top-0 left-0 z-[10] rounded-[1.5em]"
       >
         {sidebarProperty === "Background" && <BackgroundTab {...props} />}
+        {sidebarProperty === "3d" && <ThreeD {...props} />}
       </motion.div>
     </>
   );
