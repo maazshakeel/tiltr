@@ -1,0 +1,26 @@
+@import url(https://fonts.googleapis.com/css?family=Manrope:200,300,regular,500,600,700,800);
+
+* {
+  font-family: "Manrope", sans-serif;
+}
+/* Cover Image */
+.cover_image {
+  width: 2400px;
+  height: 1350px;
+}
+
+.pop-anim {
+  animation: pop-anim 350ms;
+}
+
+@keyframes pop-anim {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.07);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
