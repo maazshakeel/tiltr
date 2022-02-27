@@ -1,7 +1,9 @@
 import { Slider } from "@mui/material";
 import React, { useState } from "react";
 import { HexColorPicker } from "react-colorful";
-import { FiLayers } from "react-icons/fi";
+import toast from "react-hot-toast";
+import { FiLayers, FiRotateCw } from "react-icons/fi";
+import { Button } from "..";
 
 const Other = ({ data, setData }) => {
   const [displayColorPicker, setDisplayColorPicker] = useState(false);
@@ -229,6 +231,32 @@ const Other = ({ data, setData }) => {
           />
         </div>
       )}
+      <Button
+        scale={0.98}
+        className="!mt-4"
+        onClick={() => {
+          setData({
+            ...data,
+            others: {
+              ...data.others,
+              opacity: 100,
+              scale: 110,
+              shadow: 0,
+              border: {
+                width: 1,
+                color: "#247CD2",
+              },
+              border_radius: 30,
+            },
+          });
+          toast.success("Reseted all Other Properties!");
+        }}
+      >
+        <div className="bg-[#EEF3F9] text-sm border-2 border-[#00000010] rounded-lg py-2 px-3 font-semibold flex items-center !normal-case">
+          <FiRotateCw className="text-gray-600 mr-2" />
+          Reset All
+        </div>
+      </Button>
     </div>
   );
 };

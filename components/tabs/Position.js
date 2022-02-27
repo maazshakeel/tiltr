@@ -1,6 +1,7 @@
-import { Slider } from "@mui/material";
+import { Slider, Tooltip } from "@mui/material";
 import React from "react";
-import { FiMapPin } from "react-icons/fi";
+import toast from "react-hot-toast";
+import { FiMapPin, FiRotateCw } from "react-icons/fi";
 import { Button } from "..";
 
 const Position = ({ data, setData }) => {
@@ -120,6 +121,26 @@ const Position = ({ data, setData }) => {
         min={-100}
         max={100}
       />
+      <Button
+        scale={0.98}
+        className="!w-min  !mt-4"
+        onClick={() => {
+          setData({
+            ...data,
+            position: {
+              ...data.position,
+              x: 12,
+              y: 20,
+            },
+          });
+          toast.success("Position Reseted!");
+        }}
+      >
+        <div className="bg-[#EEF3F9] text-sm border-2 border-[#00000010] rounded-lg py-2 px-3 font-semibold flex items-center w-min !normal-case">
+          <FiRotateCw className="text-gray-600 mr-2" />
+          Reset
+        </div>
+      </Button>
     </div>
   );
 };

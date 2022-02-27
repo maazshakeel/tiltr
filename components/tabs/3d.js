@@ -1,6 +1,8 @@
 import React from "react";
-import { FiBox } from "react-icons/fi";
+import { FiBox, FiRotateCw } from "react-icons/fi";
 import Slider from "@mui/material/Slider";
+import toast from "react-hot-toast";
+import { Button } from "..";
 
 const ThreeD = ({ data, setData }) => {
   return (
@@ -103,6 +105,27 @@ const ThreeD = ({ data, setData }) => {
         min={-50}
         max={50}
       />
+      <Button
+        scale={0.98}
+        className="!w-min !mt-4"
+        onClick={() => {
+          setData({
+            ...data,
+            threeD: {
+              ...data.threeD,
+              x: 0,
+              y: 0,
+              z: 0,
+            },
+          });
+          toast.success("3d Reseted!");
+        }}
+      >
+        <div className="bg-[#EEF3F9] text-sm border-2 border-[#00000010] rounded-lg py-2 px-3 font-semibold flex items-center w-min !normal-case">
+          <FiRotateCw className="text-gray-600 mr-2" />
+          Reset
+        </div>
+      </Button>
     </div>
   );
 };

@@ -25,7 +25,7 @@ const App = () => {
       shadow: 0,
       border: {
         width: 1,
-        color: "#00000010",
+        color: "#247CD2",
       },
       border_radius: 30,
     },
