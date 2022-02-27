@@ -114,7 +114,7 @@ const Main = ({
                 borderRadius: `${data.others.border_radius}px`,
                 opacity: data.others.opacity / 100,
                 border: `${data.others.border.width}px solid ${data.others.border.color}`,
-                boxShadow: `0px 0px ${data.others.shadow}px rgba(0, 0, 0, 0.5`,
+                boxShadow: `0px 0px ${data.others.shadow}px rgba(0, 0, 0, 0.2`,
               }}
             >
               {data.mockup === "normal" && (
@@ -218,16 +218,30 @@ const Main = ({
 
               <img
                 src={imgBlob ? imgBlob : "/white.png"}
-                alt=""
+                alt="Screenshot"
                 className="w-[1800px] border-t border-[#ccc] mt-[-1px]"
               />
-
-              {children.map((child, key) => (
-                <Rnd key={key}>{child.component}</Rnd>
-              ))}
             </div>
+            {children.map((child, key) => (
+              <Rnd key={key}>{child.component}</Rnd>
+            ))}
           </div>
         </div>
+      </div>
+      <div className="absolute top-[25px] left-[25px]">
+        <h1 className="text-5xl Poppins font-bold text-blue-500 flex items-center">
+          <img
+            src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/285/waving-hand_1f44b.png"
+            height={37}
+            width={37}
+            alt="Wave"
+            className="mr-2"
+          />{" "}
+          Tiltr
+        </h1>
+        <p className="text-blue-500 text-semibold  text-xs">
+          Turn boring screenshots into <br /> engaging assets
+        </p>
       </div>
       <h3 className="flex items-center justify-center absolute bottom-4 left-1/2 transform -translate-x-1/2 font-[500]">
         Built by

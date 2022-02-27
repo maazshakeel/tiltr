@@ -3,7 +3,7 @@ import { GoBrowser } from "react-icons/go";
 import { Button } from "..";
 
 const Mockup = ({ data, setData }) => {
-  const mockups = ["normal", "chrome", "firefox", "macOS", "nomockup"];
+  const mockups = ["normal", "chrome", "firefox", "macOS", "none"];
 
   return (
     <div className="p-7 overflow-x-hidden">
@@ -35,7 +35,7 @@ const Mockup = ({ data, setData }) => {
               width={185}
               height={185}
             />
-            <h4 className="absolute bottom-4 left-4 bg-gray-200 border border-[#ccc] py-1 px-2 rounded-md text-sm capitalize font-semibold z-[3]">
+            <h4 className="absolute bottom-2 left-2 bg-gray-200 border border-[#ccc] py-1 px-2 rounded-md text-sm capitalize font-semibold z-[3]">
               {mockup}
             </h4>
           </div>

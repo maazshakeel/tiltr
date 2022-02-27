@@ -6,9 +6,10 @@ import {
   Mockup,
   Others,
   Position,
+  Text,
   ThreeD,
 } from "..";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import {
   FiBox,
   FiLayers,
@@ -37,6 +38,10 @@ const LeftBar = (props) => {
 
   const sidebarProperties = [
     {
+      name: "Mockup",
+      icon: <GoBrowser className="text-2xl text-gray-700" />,
+    },
+    {
       name: "3d",
       icon: <FiBox className="text-2xl text-gray-700" />,
     },
@@ -44,10 +49,7 @@ const LeftBar = (props) => {
       name: "Position",
       icon: <FiMapPin className="text-2xl text-gray-700" />,
     },
-    {
-      name: "Mockup",
-      icon: <GoBrowser className="text-2xl text-gray-700" />,
-    },
+
     {
       name: "Other Properties",
       icon: <FiLayers className="text-2xl text-gray-700" />,
@@ -97,14 +99,92 @@ const LeftBar = (props) => {
           rotate: 0,
         }}
         transition={{ duration: 0.6 }}
-        className="bg-white text-34xl h-[95vh] shadow-lg my-6 w-[35vh] absolute top-0 left-0 z-[10] rounded-[1.5em]"
+        className="glassmorphism text-34xl h-[95vh] shadow-lg my-6 w-[35vh] absolute top-0 left-0 z-[10] rounded-[1.5em] overflow-x-hidden"
       >
-        {sidebarProperty === "Background" && <BackgroundTab {...props} />}
-        {sidebarProperty === "3d" && <ThreeD {...props} />}
-        {sidebarProperty === "Position" && <Position {...props} />}
-        {sidebarProperty === "Mockup" && <Mockup {...props} />}
-        {sidebarProperty === "Other Properties" && <Others {...props} />}
-        {sidebarProperty === "Annotation" && <Annotation {...props} />}
+        {sidebarProperty === "Background" && (
+          <AnimatePresence>
+            <motion.div
+              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.4 }}
+            >
+              <BackgroundTab {...props} />
+            </motion.div>
+          </AnimatePresence>
+        )}
+        {sidebarProperty === "3d" && (
+          <AnimatePresence>
+            <motion.div
+              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.4 }}
+            >
+              <ThreeD {...props} />
+            </motion.div>
+          </AnimatePresence>
+        )}
+        {sidebarProperty === "Text" && (
+          <AnimatePresence>
+            <motion.div
+              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.4 }}
+            >
+              <Text {...props} />
+            </motion.div>
+          </AnimatePresence>
+        )}
+        {sidebarProperty === "Position" && (
+          <AnimatePresence>
+            <motion.div
+              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.4 }}
+            >
+              <Position {...props} />
+            </motion.div>
+          </AnimatePresence>
+        )}
+        {sidebarProperty === "Mockup" && (
+          <AnimatePresence>
+            <motion.div
+              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.4 }}
+            >
+              <Mockup {...props} />
+            </motion.div>
+          </AnimatePresence>
+        )}
+        {sidebarProperty === "Other Properties" && (
+          <AnimatePresence>
+            <motion.div
+              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.4 }}
+            >
+              <Others {...props} />
+            </motion.div>
+          </AnimatePresence>
+        )}
+        {sidebarProperty === "Annotation" && (
+          <AnimatePresence>
+            <motion.div
+              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.4 }}
+            >
+              <Annotation {...props} />
+            </motion.div>
+          </AnimatePresence>
+        )}{" "}
       </motion.div>
     </>
   );

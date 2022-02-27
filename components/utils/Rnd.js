@@ -16,9 +16,9 @@ const Component = ({ children, width, x, y }) => {
 
   // default styles
   const style = {
-    position: "absolute",
-    top: 0,
-    left: 0,
+    position: "fixed",
+    top: "50%",
+    left: "50%",
     display: isHiddening ? "none" : "block",
   };
 
@@ -52,7 +52,7 @@ const Component = ({ children, width, x, y }) => {
         <div className="absolute bottom-[-7.5px] left-[-7.5px] rounded-full h-[15px] w-[15px] bg-white border-[3px] border-[#4286f4]"></div>
         <div className="absolute bottom-[-7.5px] right-[-7.5px] rounded-full h-[15px] w-[15px] bg-white border-[3px] border-[#4286f4]"></div>
         <div
-          className="absolute right-0 top-[-50px] flex items-center justify-center p-2 px-3 z-10 rounded-md bg-red-500 hover:bg-red-700 cursor-pointer text-white"
+          className="absolute right-0 top-[-50px] flex items-center justify-center p-2 px-3 z-10 rounded-[15px] bg-red-500 transition duration-500 hover:bg-red-700 cursor-pointer text-white"
           onClick={() => setIsHiddening(true)}
         >
           Delete

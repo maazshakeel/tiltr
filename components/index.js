@@ -6,6 +6,7 @@ export { default as BackgroundTab } from "./tabs/Background";
 export { default as Position } from "./tabs/Position";
 export { default as Annotation } from "./tabs/Annotation";
 export { default as Mockup } from "./tabs/Mockup";
+export { default as Text } from "./tabs/Text";
 export { default as ThreeD } from "./tabs/3d";
 export { default as Others } from "./tabs/Others";
 
