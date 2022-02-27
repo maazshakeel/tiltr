@@ -43,7 +43,10 @@ const Sidebar = ({ imgBlob, setImgBlob, setData, data }) => {
     addInnerHtml();
 
     const downloadImage = domtoimage
-      .toPng(document.querySelector("#cover_image_download"))
+      .toPng(document.querySelector("#cover_image_download"), {
+        height: 1350,
+        width: 2400,
+      })
       .then(function (dataUrl) {
         const a = document.createElement("a");
 
@@ -68,7 +71,10 @@ const Sidebar = ({ imgBlob, setImgBlob, setData, data }) => {
     addInnerHtml();
 
     const downloadImage = domtoimage
-      .toBlob(document.querySelector("#cover_image_download"))
+      .toBlob(document.querySelector("#cover_image_download"), {
+        height: 1350,
+        width: 2400,
+      })
       .then(function (dataUrl) {
         navigator.clipboard.write([
           new ClipboardItem({
@@ -93,26 +99,6 @@ const Sidebar = ({ imgBlob, setImgBlob, setData, data }) => {
   useHotkeys("ctrl+m", () => download());
 
   const templates = [
-    {
-      func: () =>
-        setData({
-          ...data,
-          position: {
-            x: "35",
-            y: "35",
-          },
-          threeD: {
-            x: "0",
-            y: "22",
-            z: "-7",
-          },
-          others: {
-            ...data.others,
-            shadow: "193",
-            scale: "138",
-          },
-        }),
-    },
     {
       func: () =>
         setData({
@@ -173,6 +159,26 @@ const Sidebar = ({ imgBlob, setImgBlob, setData, data }) => {
           },
         }),
     },
+    {
+      func: () =>
+        setData({
+          ...data,
+          position: {
+            x: "35",
+            y: "35",
+          },
+          threeD: {
+            x: "0",
+            y: "22",
+            z: "-7",
+          },
+          others: {
+            ...data.others,
+            shadow: "193",
+            scale: "138",
+          },
+        }),
+    },
   ];
 
   const refAnimationInstance = useRef(null);
@@ -229,7 +235,7 @@ const Sidebar = ({ imgBlob, setImgBlob, setData, data }) => {
             <Button key={index} onClick={template.func} scale={0.95}>
               <div className="border-2 my-2 border-[#cccccc40] hover:border-blue-500 transition duration-500 p-2 rounded-[1em]">
                 <img
-                  src={`/assets/templates/${index + 1}.png`}
+                  src={`/assets/templates/${index + 2}.png`}
                   alt="Screenshot"
                   className="rounded-[1em]"
                 />
