@@ -21,7 +21,8 @@
     "react": "17.0.2",
     "react-colorful": "^5.5.1",
     "react-dom": "17.0.2",
-    "react-icons": "^4.3.1"
+    "react-icons": "^4.3.1",
+    "react-rnd": "^10.3.5"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.2",

@@ -19,8 +19,16 @@ import { BsShieldShaded, BsUpload } from "react-icons/bs";
 import { MdOutlineAccountCircle } from "react-icons/md";
 import { AiTwotoneLock } from "react-icons/ai";
 import { FaBars } from "react-icons/fa";
+import { Rnd } from "..";
 
-const Main = ({ data, setData, imgBlob, setImgBlob }) => {
+const Main = ({
+  data,
+  setData,
+  imgBlob,
+  setImgBlob,
+  children,
+  setChildren,
+}) => {
   // resize cover image to fit the view
   const resizeCoverImage = () => {
     const cover_image = document.querySelector("#cover_image_preview");
@@ -213,6 +221,10 @@ const Main = ({ data, setData, imgBlob, setImgBlob }) => {
                 alt=""
                 className="w-[1800px] border-t border-[#ccc] mt-[-1px]"
               />
+
+              {children.map((child, key) => (
+                <Rnd key={key}>{child.component}</Rnd>
+              ))}
             </div>
           </div>
         </div>

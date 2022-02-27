@@ -3,6 +3,7 @@ import { Sidebar, Main, LeftBar } from "../components";
 
 const App = () => {
   const [imgBlob, setImgBlob] = useState();
+  const [children, setChildren] = useState([]);
   const [data, setData] = useState({
     background: {
       color1: "#00F3FF",
@@ -20,7 +21,7 @@ const App = () => {
     },
     others: {
       opacity: 100,
-      scale: 10,
+      scale: 110,
       shadow: 0,
       border: {
         width: 1,
@@ -31,7 +32,7 @@ const App = () => {
     mockup: "normal",
   });
 
-  const props = { data, setData, imgBlob, setImgBlob };
+  const props = { data, setData, imgBlob, setImgBlob, children, setChildren };
   return (
     <div className="bg-[#ECF2F5] h-screen w-screen overflow-hidden flex text-[#444]">
       <LeftBar {...props} />

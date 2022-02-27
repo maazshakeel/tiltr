@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import { BackgroundTab, Button, Mockup, Others, Position, ThreeD } from "..";
+import {
+  Annotation,
+  BackgroundTab,
+  Button,
+  Mockup,
+  Others,
+  Position,
+  ThreeD,
+} from "..";
 import { motion } from "framer-motion";
 import {
   FiBox,
@@ -96,6 +104,7 @@ const LeftBar = (props) => {
         {sidebarProperty === "Position" && <Position {...props} />}
         {sidebarProperty === "Mockup" && <Mockup {...props} />}
         {sidebarProperty === "Other Properties" && <Others {...props} />}
+        {sidebarProperty === "Annotation" && <Annotation {...props} />}
       </motion.div>
     </>
   );
