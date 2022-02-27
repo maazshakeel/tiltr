@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BackgroundTab, Button, Position, ThreeD } from "..";
+import { BackgroundTab, Button, Mockup, Others, Position, ThreeD } from "..";
 import { motion } from "framer-motion";
 import {
   FiBox,
@@ -94,6 +94,8 @@ const LeftBar = (props) => {
         {sidebarProperty === "Background" && <BackgroundTab {...props} />}
         {sidebarProperty === "3d" && <ThreeD {...props} />}
         {sidebarProperty === "Position" && <Position {...props} />}
+        {sidebarProperty === "Mockup" && <Mockup {...props} />}
+        {sidebarProperty === "Other Properties" && <Others {...props} />}
       </motion.div>
     </>
   );

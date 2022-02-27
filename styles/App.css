@@ -7,6 +7,7 @@
 .cover_image {
   width: 2400px;
   height: 1350px;
+  overflow: hidden !important;
 }
 
 .pop-anim {

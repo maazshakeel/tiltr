@@ -57,7 +57,7 @@ const Position = ({ data, setData }) => {
           </Button>
         </div>
       </div>
-      <div className="flex items-center mt-4">
+      <div className="flex items-center mt-6">
         <h3 className="text-gray-600">Position X:</h3>
         <input
           value={data.position.x}

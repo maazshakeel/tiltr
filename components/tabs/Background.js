@@ -375,7 +375,7 @@ const BackgroundTab = ({ data, setData }) => {
     <div className="p-7 overflow-x-hidden">
       <div className="flex items-center">
         <BiPalette className="text-2xl mt-1 text-[#666]" />{" "}
-        <h2 className="text-2xl ml-2">Background</h2>{" "}
+        <h2 className="text-2xl ml-2 text-[#666]">Background</h2>{" "}
       </div>
       <div className="bg-[#cccccc] mt-2 rounded-xl w-full h-[1px] mb-6"></div>
 
@@ -474,7 +474,7 @@ const BackgroundTab = ({ data, setData }) => {
           .slice(0, showMoreGradients ? gradients.length : 24)
           .map(({ colors }, index) => (
             <Button
-              className="!m-1"
+              className="!m-[4px]"
               onClick={() => {
                 setData({
                   ...data,
@@ -488,7 +488,7 @@ const BackgroundTab = ({ data, setData }) => {
               key={index}
             >
               <div
-                className="h-[25px] w-[25px] rounded-[3px]"
+                className="h-[25px] w-[25px] rounded-md !m-[4px]"
                 style={{
                   background: `linear-gradient(${data.background.direction}deg, ${colors[0]}, ${colors[1]})`,
                 }}
